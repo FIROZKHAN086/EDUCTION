@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaGraduationCap, FaBell } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Todate = () => {
   const cards = [
@@ -14,7 +15,8 @@ const Todate = () => {
       description: "New job opportunities matching your profile",
       count: 5,
       buttonText: "View Jobs",
-      color: "from-indigo-500 to-purple-500"
+      color: "from-indigo-500 to-purple-500",
+      link: "/contact"
     },
     {
       id: 2, 
@@ -23,7 +25,8 @@ const Todate = () => {
       description: "Your recent exam results are now available",
       count: 3,
       buttonText: "See Results",
-      color: "from-emerald-500 to-teal-500"
+      color: "from-emerald-500 to-teal-500",
+      link: "/result"
     },
     {
       id: 3,
@@ -93,7 +96,7 @@ const Todate = () => {
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"/>
                 <span className="relative inline-flex items-center">
-                  {card.buttonText}
+               <Link to={card.link}>   {card.buttonText} </Link>
                   <svg className="w-5 h-5 ml-2 -mr-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
