@@ -7,7 +7,7 @@ import Notes from './Components/Notes'
 import Result from './Components/Result'
 import NotFound from './Pages/NotFound'
 import Jobs from './Components/Jobs'
-
+import About from './Pages/About'
 const App = () => {
   return (
     <>
@@ -17,6 +17,7 @@ const App = () => {
       <Route path='/notes' element={<Notes />} />
       <Route path='/result' element={<Result />} />
       <Route path='/jobs' element={<Jobs />} />
+      <Route path='/about' element={<About />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
     <Footer />
