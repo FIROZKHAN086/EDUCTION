@@ -1,7 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/autoplay';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaGraduationCap, FaBell } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -11,97 +13,120 @@ const Todate = () => {
     {
       id: 1,
       title: "Job Alerts",
-      icon: <FaBriefcase className="text-3xl text-indigo-500" />,
+      icon: <FaBriefcase className="text-4xl text-cyan-300" />,
       description: "New job opportunities matching your profile",
       count: 5,
       buttonText: "View Jobs",
-      color: "from-indigo-500 to-purple-500",
-      link: "/contact"
+      color: "from-[#4158D0] via-[#C850C0] to-[#FFCC70]",
+      textColor: "text-cyan-300",
+      link: "/jobs"
     },
     {
-      id: 2, 
-      title: "Results Declared",
-      icon: <FaGraduationCap className="text-3xl text-emerald-500" />,
+      id: 2,
+      title: "Results Declared", 
+      icon: <FaGraduationCap className="text-4xl text-fuchsia-300" />,
       description: "Your recent exam results are now available",
       count: 3,
       buttonText: "See Results",
-      color: "from-emerald-500 to-teal-500",
+      color: "from-[#FF3CAC] via-[#784BA0] to-[#2B86C5]",
+      textColor: "text-fuchsia-300",
+      descColor: "text-pink-100",
       link: "/result"
     },
     {
       id: 3,
       title: "Important Notifications",
-      icon: <FaBell className="text-3xl text-rose-500" />,
+      icon: <FaBell className="text-4xl text-amber-300" />,
       description: "Check your pending notifications",
       count: 8,
       buttonText: "View All",
-      color: "from-rose-500 to-pink-500"
+      color: "from-[#8EC5FC] via-[#E0C3FC] to-[#FF9A8B]",
+      textColor: "text-amber-300"
     }
   ];
 
   return (
-    <div className="w-full mt-10 py-16 px-4 bg-gray-900">
-      <div className="max-w-7xl mx-auto mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-          Today's Alerts
-        </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Stay updated with your latest notifications, job opportunities, and academic results all in one place
-        </p>
+    <div className="w-full py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800 overflow-hidden">
+      <div className="max-w-7xl mx-auto mb-16">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-5xl md:text-6xl font-bold text-center mb-6"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-400">
+            Today's Updates
+          </span>
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-cyan-200 text-xl max-w-3xl mx-auto text-center font-light"
+        >
+          Stay informed with the latest opportunities and updates customized for you
+        </motion.p>
       </div>
 
       <Swiper
-        slidesPerView={1.2}
-        spaceBetween={20}
-        breakpoints={{
-          640: {
-            slidesPerView: 2.2,
-          },
-          1024: {
-            slidesPerView: 3.2,
-          },
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         }}
-        className="py-4"
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectCoverflow, Autoplay]}
+        className="w-full py-12"
       >
         {cards.map((card) => (
-          <SwiperSlide key={card.id}>
+          <SwiperSlide key={card.id} className="w-[380px]">
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              className={`bg-gradient-to-br ${card.color} rounded-2xl p-6 shadow-xl h-[280px] flex flex-col justify-between backdrop-blur-lg border border-white/10`}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className={`bg-gradient-to-br ${card.color} rounded-[2rem] p-8 h-[400px] backdrop-blur-xl shadow-2xl relative overflow-hidden group`}
             >
-              <div>
-                <div className="flex justify-between items-center mb-4">
-                  <div className="bg-black/30 p-3 rounded-xl">
+              {/* Animated background circles */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-2xl transition-all duration-500 group-hover:scale-150"/>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/10 rounded-full blur-2xl transition-all duration-500 group-hover:scale-150"/>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="bg-black/30 p-4 rounded-2xl backdrop-blur-md">
                     {card.icon}
                   </div>
-                  <span className="bg-black/30 px-3 py-1 rounded-full text-white text-sm font-medium">
+                  <span className={`bg-black/30 backdrop-blur-md px-6 py-2 rounded-full ${card.textColor} text-lg font-medium`}>
                     {card.count} new
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">
+                
+                <h3 className={`text-3xl font-bold ${card.textColor} mb-4 drop-shadow-lg`}>
                   {card.title}
                 </h3>
-                <p className="text-white/90 font-medium">
+                <p className={`${card.descColor || 'text-white'} text-lg mb-8 font-medium tracking-wide`}>
                   {card.description}
                 </p>
+
+                <Link to={card.link}>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full bg-black/30 backdrop-blur-md ${card.textColor} font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 hover:bg-black/40 transition-all duration-300 border border-white/10`}
+                  >
+                    {card.buttonText}
+                    <svg className="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </motion.button>
+                </Link>
               </div>
-              
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: "rgba(255,255,255,0.2)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-4 relative overflow-hidden group bg-gradient-to-r from-black/30 to-black/40 text-white font-bold py-3 px-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-sm border border-white/20 w-full"
-              >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"/>
-                <span className="relative inline-flex items-center">
-               <Link to={card.link}>   {card.buttonText} </Link>
-                  <svg className="w-5 h-5 ml-2 -mr-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-              </motion.button>
             </motion.div>
           </SwiperSlide>
         ))}

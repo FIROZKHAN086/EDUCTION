@@ -1,9 +1,10 @@
 import { FaGraduationCap, FaBriefcase, FaFileAlt, FaClipboardCheck } from 'react-icons/fa';
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export const categories = [
   {
     title: "Latest Results",
+    link: "/result",
     icon: React.createElement(FaGraduationCap, { className: "text-3xl" }),
     items: [
       {
@@ -25,6 +26,7 @@ export const categories = [
   },
   {
     title: "Latest Jobs",
+    link: "/jobs",
     icon: React.createElement(FaBriefcase, { className: "text-3xl" }),
     items: [
       {
@@ -49,6 +51,7 @@ export const categories = [
   },
   {
     title: "Admit Cards",
+    link: "/admit-cards",
     icon: React.createElement(FaFileAlt, { className: "text-3xl" }),
     items: [
       {
@@ -70,6 +73,7 @@ export const categories = [
   },
   {
     title: "Answer Keys",
+    link: "/answer-keys",
     icon: React.createElement(FaClipboardCheck, { className: "text-3xl" }),
     items: [
       {

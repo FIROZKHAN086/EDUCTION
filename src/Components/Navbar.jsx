@@ -59,7 +59,7 @@ const Navbar = () => {
               <span className="relative z-10">Results</span>
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-md opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 origin-left"></span>
             </Link>
-            <Link to="/contact" className="relative group text-white px-4 py-2 rounded-md text-md font-medium transition duration-300">
+            <Link to="/jobs" className="relative group text-white px-4 py-2 rounded-md text-md font-medium transition duration-300">
               <span className="relative z-10">Jobs</span>
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-md opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 origin-left"></span>
             </Link>
@@ -123,13 +123,13 @@ const Navbar = () => {
                   <span className="relative z-10">Notes</span>
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-md opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 origin-left"></span>
                 </Link>
-                <Link to="/about" className="relative group block text-white px-3 py-2 rounded-md text-base font-medium transition duration-300"
+                <Link to="/result" className="relative group block text-white px-3 py-2 rounded-md text-base font-medium transition duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="relative z-10">Results</span>
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-md opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 origin-left"></span>
                 </Link>
-                <Link to="/contact" className="relative group block text-white px-3 py-2 rounded-md text-base font-medium transition duration-300"
+                <Link to="/jobs" className="relative group block text-white px-3 py-2 rounded-md text-base font-medium transition duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="relative z-10">Jobs</span>

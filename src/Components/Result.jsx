@@ -90,7 +90,7 @@ const Result = () => {
                             )}
                             {item.lastDate && (
                               <span className="bg-red-900/50 px-3 py-1 rounded-full text-sm">
-                                Last Date: {item.lastDate}
+                                 Date: {item.lastDate}
                               </span>
                             )}
                             {item.posts && (

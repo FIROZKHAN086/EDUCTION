@@ -54,7 +54,7 @@ const Card = () => {
               </div>
 
               <Link 
-                to={"/result"}
+                to={category.link}
                 className="mt-6 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
               >
                 View All
