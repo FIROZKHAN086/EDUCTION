@@ -41,10 +41,10 @@ const Footer = () => {
     ]
 
   const socialLinks = [
-    { icon: <FaFacebook />, url: "https://facebook.com", color: "hover:text-blue-400", bgColor: "bg-blue-400/10" },
-    { icon: <FaTwitter />, url: "https://twitter.com", color: "hover:text-sky-400", bgColor: "bg-sky-400/10" },
-    { icon: <FaInstagram />, url: "https://instagram.com", color: "hover:text-pink-400", bgColor: "bg-pink-400/10" },
-    { icon: <FaLinkedin />, url: "https://linkedin.com", color: "hover:text-blue-500", bgColor: "bg-blue-500/10" },
+    { icon: <FaFacebook />, url: "https://facebook.com", color: "hover:text-blue-400", bgColor: "bg-blue-400/60" },
+    { icon: <FaTwitter />, url: "https://twitter.com", color: "hover:text-sky-400", bgColor: "bg-sky-400/60" },
+    { icon: <FaInstagram />, url: "https://instagram.com", color: "hover:text-pink-400", bgColor: "bg-pink-400/60" },
+    { icon: <FaLinkedin />, url: "https://linkedin.com", color: "hover:text-blue-500", bgColor: "bg-blue-500/60" },
   ];
 
   return (
@@ -72,14 +72,14 @@ const Footer = () => {
             <p className="text-slate-300 text-lg leading-relaxed backdrop-blur-sm bg-slate-900/30 p-6 rounded-2xl border border-slate-800/50">
               Empowering minds through innovative education. Join our vibrant community of learners and unlock your potential with cutting-edge resources and expert guidance.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${social.color} ${social.bgColor} p-4 rounded-full text-xl transition-all duration-300`}
+                  className={`${social.color} ${social.bgColor}  p-4 rounded-full text-xl transition-all duration-300`}
                   whileHover={{ y: -4, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
