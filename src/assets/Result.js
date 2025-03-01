@@ -12,7 +12,7 @@ export const categories = [
         examDate: "4 June 2023",
         lastDate: "15 May 2023",
         posts: "5000+ Vacancies",
-        link: "/results/upsc-civil-services-2023"
+        link: "https://www.upsc.gov.in/results/upsc-civil-services-2023-result"
       },
       {
         name: "SSC CGL Tier II Results",

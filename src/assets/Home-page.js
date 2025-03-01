@@ -10,7 +10,7 @@ export const categories = [
       {
         name: "UPSC Civil Services Final Result 2023",
         date: "15 May 2023",
-        link: "/results/upsc-civil-services-2023"
+        link: "https://www.instagram.com/"
       },
       {
         name: "SSC CGL Tier II Results", 

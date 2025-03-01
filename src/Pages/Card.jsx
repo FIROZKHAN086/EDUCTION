@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaBriefcase, FaFileAlt, FaClipboardCheck } from 'react-icons/fa';
-import { categories } from '../assets/data';
+import { categories } from '../assets/Home-page';
 
 const Card = () => {
   return (
@@ -38,6 +38,7 @@ const Card = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <Link 
+                      target='_blank'
                       to={item.link}
                       className="block p-4 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 border border-gray-100 transition-all duration-200"
                     >
