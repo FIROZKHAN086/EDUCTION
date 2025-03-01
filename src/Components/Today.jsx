@@ -18,7 +18,7 @@ const Todate = () => {
       count: 5,
       buttonText: "View Jobs",
       color: "from-[#4158D0] via-[#C850C0] to-[#FFCC70]",
-      textColor: "text-cyan-300",
+      textColor: "text-white",
       link: "/jobs"
     },
     {

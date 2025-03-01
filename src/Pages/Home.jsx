@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Navbar from '../Components/Navbar'
-import Todate from '../Components/Todate'
+import Todate from '../Components/Today'
 import Card from './Card'
 
 const Home = () => {
