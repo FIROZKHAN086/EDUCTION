@@ -24,7 +24,7 @@ const Footer = () => {
         },
         {
             "name":"Results",
-            "link":"/results"
+            "link":"/result"
         },
         {
             "name":"Jobs",
