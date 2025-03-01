@@ -36,17 +36,18 @@ const Todate = () => {
     {
       id: 3,
       title: "Important Notifications",
-      icon: <FaBell className="text-4xl text-amber-300" />,
-      description: "Check your pending notifications",
+      icon: <FaBell className="text-4xl text-black" />,
+      description: "Check your pending notifications", 
       count: 8,
       buttonText: "View All",
-      color: "from-[#8EC5FC] via-[#E0C3FC] to-[#FF9A8B]",
-      textColor: "text-amber-300"
+      color: "from-[#00F5A0] via-[#00D9F5] to-[#9D00FF]",
+      textColor: "text-black" ,
+      link: "/notifications"
     }
   ];
 
   return (
-    <div className="w-full py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800 overflow-hidden">
+    <div className="w-full mt-10 font-montserrat py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto mb-16">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}

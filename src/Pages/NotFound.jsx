@@ -37,10 +37,10 @@ const NotFound = () => {
             Don't worry though, even the best explorers get lost sometimes.
           </p>
 
-          <div className="z-10 flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <div className=" flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link
               to="/"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
+              className="inline-flex z-50 cursor-pointer items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
             >
               <span className="mr-2">←</span>
               Return Home

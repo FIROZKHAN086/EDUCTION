@@ -11,7 +11,7 @@ const Result = () => {
   }, []);
 
   return (
-    <div className="min-h-screen mt-16 bg-gradient-to-b from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen font-ubuntu mt-16 bg-gradient-to-b from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}

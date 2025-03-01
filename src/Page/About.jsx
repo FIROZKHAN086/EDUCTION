@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 pt-20">
+    <div className="min-h-screen font-poppins bg-gradient-to-b from-gray-900 to-gray-800 pt-20">
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0 }}

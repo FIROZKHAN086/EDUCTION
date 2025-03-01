@@ -21,7 +21,8 @@ export const categories = [
         name: "IBPS PO Final Results",
         date: "10 May 2023",
         link: "/results/ibps-po-final"
-      }
+      },
+      
     ]
   },
   {

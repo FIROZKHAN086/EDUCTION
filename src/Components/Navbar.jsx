@@ -34,14 +34,14 @@ const Navbar = () => {
         y: show ? 0 : -100
       }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 rounded-b-xl left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600"
+      className="fixed font-poppins top-0 rounded-b-xl left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-3xl font-bold text-white hover:text-gray-200 transition duration-300">
-              Real <span className="text-yellow-400">Education</span>
+            Smart <span className="text-yellow-400">Scholars</span>
             </Link>
           </div>
 

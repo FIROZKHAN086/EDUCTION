@@ -10,10 +10,16 @@ const Jobs = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  
+  const handleJobClick = (jobIndex) => {
+    if (selectedJob === jobIndex) {
+      setSelectedJob(null);
+    } else {
+      setSelectedJob(jobIndex);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen font-raleway bg-gradient-to-b from-gray-900 to-gray-800 pt-20 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -45,7 +51,7 @@ const Jobs = () => {
                 >
                   <div 
                     className="p-6 cursor-pointer"
-                    onClick={() => setSelectedJob(selectedJob === index ? null : index)}
+                    onClick={() => handleJobClick(category.id + '-' + index)}
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                       <div className="flex items-center gap-4">
@@ -71,7 +77,7 @@ const Jobs = () => {
                     </div>
 
                     <AnimatePresence>
-                      {selectedJob === index && (
+                      {selectedJob === (category.id + '-' + index) && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}

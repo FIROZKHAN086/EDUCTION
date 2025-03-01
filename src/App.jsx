@@ -7,7 +7,9 @@ import Notes from './Components/Notes'
 import Result from './Components/Result'
 import NotFound from './Pages/NotFound'
 import Jobs from './Components/Jobs'
-import About from './Pages/About'
+import About from './Page/About'
+import Privacy from './Page/Privacy'
+import Terms from './Page/Terms'
 const App = () => {
   return (
     <>
@@ -18,6 +20,8 @@ const App = () => {
       <Route path='/result' element={<Result />} />
       <Route path='/jobs' element={<Jobs />} />
       <Route path='/about' element={<About />} />
+      <Route path='/privacy' element={<Privacy />} />
+      <Route path='/terms' element={<Terms />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
     <Footer />

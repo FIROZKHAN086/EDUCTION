@@ -5,60 +5,67 @@ import { FaGraduationCap, FaBriefcase, FaFileAlt, FaClipboardCheck } from 'react
 import { categories } from '../assets/data';
 
 const Card = () => {
-  
-
   return (
-    <div id='scroll' className="w-full py-16 px-4 bg-gray-100">
+    <div id='scroll' className="w-full font-roboto py-16 px-4 bg-gray-200">
       <div className="max-w-7xl mx-auto">
-        <div className="flex overflow-x-auto space-x-6 pb-8 
-          scrollbar-thin 
-          scrollbar-thumb-blue-600 
-          scrollbar-track-gray-200 
-          hover:scrollbar-thumb-blue-700
-          scrollbar-thumb-rounded-full
-          scrollbar-track-rounded-full
-          [&::-webkit-scrollbar]:h-2
-          [&::-webkit-scrollbar-thumb]:shadow-lg
-          [&::-webkit-scrollbar-thumb]:bg-gradient-to-r 
-          [&::-webkit-scrollbar-thumb]:from-blue-600 
-          [&::-webkit-scrollbar-thumb]:to-purple-600">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <motion.div
               key={index}
-              className="min-w-[300px] bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
-                  {category.icon}
+              <motion.div 
+                className="flex items-center gap-3 mb-6 p-3 bg-gradient-to-r from-blue-500  to-pink-400 rounded-xl"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="p-3 bg-white/90 rounded-lg text-2xl">
+                  {React.cloneElement(category.icon, {
+                    className: "text-blue-600"
+                  })}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">{category.title}</h3>
-              </div>
+                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+              </motion.div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {category.items.map((item, itemIndex) => (
-                  <Link 
+                  <motion.div
                     key={itemIndex}
-                    to={item.link}
-                    className="block p-4 rounded-lg hover:bg-gray-50 border border-gray-100 transition-colors duration-200"
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <h4 className="font-semibold text-gray-700 mb-2">{item.name}</h4>
-                    <div className="flex justify-between text-sm text-gray-500">
-                      {item.date && <span>Date: {item.date}</span>}
-                      {item.lastDate && <span>Last Date: {item.lastDate}</span>}
-                      {item.examDate && <span>Exam Date: {item.examDate}</span>}
-                      {item.posts && <span>{item.posts}</span>}
-                    </div>
-                  </Link>
+                    <Link 
+                      to={item.link}
+                      className="block p-4 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 border border-gray-100 transition-all duration-200"
+                    >
+                      <h4 className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
+                        {item.name}
+                      </h4>
+                      <div className="flex flex-col sm:flex-row justify-between gap-2 text-sm text-gray-500">
+                        {item.date && <span>Date: {item.date}</span>}
+                        {item.lastDate && <span>Last Date: {item.lastDate}</span>}
+                        {item.examDate && <span>Exam Date: {item.examDate}</span>}
+                        {item.posts && <span>{item.posts}</span>}
+                      </div>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
 
               <Link 
                 to={category.link}
-                className="mt-6 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                className="mt-6 inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-medium group"
               >
                 View All
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg 
+                  className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
