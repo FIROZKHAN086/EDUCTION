@@ -6,7 +6,7 @@ import { categories } from '../assets/Home-page';
 
 const Card = () => {
   return (
-    <div id='scroll' className="w-full font-roboto py-16 px-4 bg-gray-200">
+    <div id='scroll' className="w-full font-roboto py-16 px-4  bg-gray-200">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {categories.map((category, index) => (
@@ -42,7 +42,7 @@ const Card = () => {
                       to={item.link}
                       className="block p-4 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 border border-gray-100 transition-all duration-200"
                     >
-                      <h4 className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
+                      <h4 className="font-semibold text-black bg-clip-text mb-2">
                         {item.name}
                       </h4>
                       <div className="flex flex-col sm:flex-row justify-between gap-2 text-sm text-gray-500">
